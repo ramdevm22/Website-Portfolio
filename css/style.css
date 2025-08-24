@@ -1,0 +1,118 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.movie-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.movie-poster {
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Genre tabs styling */
+.genre-tabs {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.genre-tab {
+    padding: 8px 16px;
+    margin-right: 8px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.genre-tab:hover, .genre-tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.see-more-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.movie-poster {
+    height: 400px;
+    object-fit: cover;
+    background-color: #f0f0f0; /* Fallback background */
+}
+
+/* Loading state */
+.movie-poster[src*="placeholder"] {
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Add to your style.css */
+.movie-poster {
+    min-height: 400px;
+    background-color: #f5f5f5;
+    object-fit: cover;
+}
+
+.movie-poster[src*="no-poster"] {
+    object-fit: contain;
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+/* Add to your style.css */
+#see-more-new-releases {
+    padding: 10px 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+#see-more-new-releases:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#see-more-top-rated {
+    padding: 10px 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+#see-more-top-rated:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

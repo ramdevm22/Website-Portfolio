@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .movie-poster {
+            max-height: 500px;
+            width: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .detail-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .back-button {
+            margin-bottom: 30px;
+        }
+        #movie-title {
+            color: #343a40;
+            font-weight: 700;
+        }
+        .badge {
+            font-size: 1rem;
+            padding: 0.35em 0.65em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <!-- Back Button -->
+        <button onclick="window.history.back()" class="btn btn-outline-primary back-button">
+            ← Back to Home
+        </button>
+
+        <!-- Movie Details Container -->
+        <div id="movie-details" class="row">
+            <div class="col-lg-4 mb-4">
+                <img id="movie-poster" src="" class="movie-poster" alt="Movie Poster">
+            </div>
+            
+            <div class="col-lg-8">
+                <div class="d-flex align-items-center mb-4 gap-2">
+                    <span class="badge bg-primary" id="movie-rating"></span>
+                    <span class="text-muted" id="movie-year"></span>
+                    <span>•</span>
+                    <span id="movie-runtime"></span>
+                    <span>•</span>
+                    <span id="movie-genres"></span>
+                </div>
+                
+                <h1 id="movie-title" class="mb-4"></h1>
+                
+                <div class="detail-section">
+                    <h3>Overview</h3>
+                    <p id="movie-overview" class="lead"></p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="detail-section">
+                            <h3>Details</h3>
+                            <p><strong>Release Date:</strong> <span id="movie-release-date"></span></p>
+                            <p><strong>Status:</strong> <span id="movie-status"></span></p>
+                            <p><strong>Original Language:</strong> <span id="movie-language"></span></p>
+                            <p><strong>Budget:</strong> <span id="movie-budget"></span></p>
+                            <p><strong>Revenue:</strong> <span id="movie-revenue"></span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="detail-section">
+                            <h3>Top Cast</h3>
+                            <div id="movie-cast"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="text-center py-5">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Loading movie details...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="alert alert-danger d-none"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/movie-details.js" type="module"></script>
+</body>
+</html>
